@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG_MODE=true
+      - SITE_NAME=Universal Portfolio & Web Tools
+      - SITE_URL=http://localhost:8080
+    volumes:
+      - ./private/data:/var/www/html/private/data
+      - ./logs:/var/www/html/logs
+      - ./.env:/var/www/html/.env
+    depends_on:
+      - db
+    networks:
+      - portfolio-network
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: portfolio_user
+      MYSQL_PASSWORD: portfolio_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - portfolio-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: portfolio_user
+      PMA_PASSWORD: portfolio_pass
+    depends_on:
+      - db
+    networks:
+      - portfolio-network
+
+volumes:
+  mysql_data:
+
+networks:
+  portfolio-network:
+    driver: bridge

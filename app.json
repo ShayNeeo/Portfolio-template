@@ -1,0 +1,44 @@
+{
+  "name": "Universal Portfolio & Web Tools",
+  "description": "A complete web platform combining portfolio showcase with powerful web utilities - QR code generation, URL shortening, and more.",
+  "keywords": ["portfolio", "qr-code", "php", "web-tools", "freelancer"],
+  "website": "https://github.com/ShayNeeo/Portfolio-template",
+  "repository": "https://github.com/ShayNeeo/Portfolio-template",
+  "logo": "https://raw.githubusercontent.com/ShayNeeo/Portfolio-template/main/public/assets/images/logo.jpg",
+  "success_url": "/",
+  "stack": "heroku-22",
+  "env": {
+    "SITE_NAME": {
+      "description": "Your site name",
+      "value": "My Portfolio"
+    },
+    "SITE_URL": {
+      "description": "Your site URL (leave blank for Heroku URL)"
+    },
+    "CONTACT_EMAIL": {
+      "description": "Your contact email address"
+    },
+    "SECRET_KEY": {
+      "description": "Secret key for security (32 random characters)",
+      "generator": "secret"
+    },
+    "DEBUG_MODE": {
+      "description": "Enable debug mode (true/false)",
+      "value": "false"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    "heroku-postgresql:mini"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}

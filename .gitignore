@@ -1,0 +1,64 @@
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# Vendor directory
+/vendor/
+
+# Node modules (if using npm/yarn)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# User-uploaded files
+private/data/qr-uploads/*
+!private/data/qr-uploads/.gitkeep
+
+# Generated QR codes
+private/data/qr-generated/*
+!private/data/qr-generated/.gitkeep
+
+# Cache files
+cache/
+*.cache
+
+# PHP specific
+composer.lock
+.phpunit.result.cache
+
+# Coverage reports
+coverage/
+clover.xml
+
+# Backup files
+*.bak
+*.backup
+
+# Configuration overrides
+config/local.php
+config/production.php

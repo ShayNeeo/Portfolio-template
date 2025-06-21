@@ -1,0 +1,6 @@
+name: portfolio-web-tools
+run: |
+  mkdir -p data logs cache
+  chmod 777 data logs cache
+buildCommand: composer install --no-dev --optimize-autoloader && php cli.php setup
+startCommand: cd public && php -S 0.0.0.0:$PORT

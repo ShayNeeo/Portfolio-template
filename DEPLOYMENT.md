@@ -1,4 +1,35 @@
-# Deployment Checklist for sgn.is-a.dev
+# Deployment Configuration
+
+This document outlines various deployment strategies and configurations for the Universal Portfolio & Web Tools platform.
+
+## Quick Deploy Options
+
+### Railway (Recommended for Beginners)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/ShayNeeo/Portfolio-template)
+
+**Features:**
+- ✅ Automatic SSL certificates
+- ✅ Git-based deployments
+- ✅ Environment variable management
+- ✅ Built-in monitoring
+- ✅ Custom domains
+
+**Setup:**
+1. Click the Railway deploy button
+2. Connect your GitHub account
+3. Configure environment variables
+4. Deploy automatically
+
+### Heroku
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ShayNeeo/Portfolio-template)
+
+**Required Add-ons:**
+- Heroku Postgres (for database features)
+- Heroku Redis (for caching)
+
+### Original Deployment Guide
 
 ## Pre-deployment Steps
 

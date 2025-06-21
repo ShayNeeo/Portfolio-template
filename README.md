@@ -1,6 +1,72 @@
 # 🌐 Universal Portfolio & Web Tools Platform
 
+[![CI/CD Pipeline](https://github.com/ShayNeeo/Portfolio-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ShayNeeo/Portfolio-template/actions/workflows/ci.yml)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://php.net)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ShayNeeo/Portfolio-template/graphs/commit-activity)
+
 **A complete, ready-to-deploy web platform combining portfolio showcase with powerful web utilities.** Perfect for developers, freelancers, agencies, and businesses who need a professional online presence with integrated productivity tools.
+
+## 🚀 Quick Start
+
+### Option 1: Docker (Recommended)
+```bash
+git clone https://github.com/ShayNeeo/Portfolio-template.git
+cd Portfolio-template
+cp .env.example .env
+docker-compose up -d
+```
+Visit: http://localhost:8080
+
+### Option 2: Manual Installation
+```bash
+git clone https://github.com/ShayNeeo/Portfolio-template.git
+cd Portfolio-template
+composer install
+cp .env.example .env
+php -S localhost:8000 -t public/
+```
+
+### Option 3: One-Click Deployment
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/ShayNeeo/Portfolio-template)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ShayNeeo/Portfolio-template)
+
+## 📋 Requirements
+
+- **PHP 7.4+** (8.1+ recommended)
+- **Composer** for dependency management
+- **GD Extension** for image processing
+- **Web Server** (Apache/Nginx) or PHP built-in server
+- **Optional**: Docker for containerized deployment
+
+## ✨ Features
+
+### 🎨 **Professional Portfolio System**
+- **Responsive Design** - Mobile-first, works on all devices
+- **Easy Customization** - Change colors, fonts, and layout with CSS variables
+- **SEO Optimized** - Meta tags, structured data, sitemap generation
+- **Contact Forms** - Built-in contact form with spam protection
+- **Social Integration** - Links to all major social platforms
+
+### 🔗 **QR Code Generation Suite**
+- **URL to QR** - Convert any link to QR code instantly
+- **File Sharing** - Upload files, get QR codes for downloads
+- **Batch Processing** - Generate multiple QR codes at once
+- **Custom Styling** - Branded QR codes with logos
+- **Analytics** - Track QR code usage and downloads
+
+### 🔧 **Web Tools Collection**
+- **URL Shortener** - Create short links for marketing
+- **File Manager** - Secure file upload and management
+- **Admin Dashboard** - Manage all tools from one place
+- **API Endpoints** - RESTful API for integrations
+
+### 🛡️ **Security Features**
+- **CSRF Protection** - Secure forms and actions
+- **File Validation** - Safe file upload handling
+- **Rate Limiting** - Prevent abuse and spam
+- **Input Sanitization** - XSS protection
+- **Secure Sessions** - Encrypted session management
 
 ## 🎯 **Why This Project Matters**
 

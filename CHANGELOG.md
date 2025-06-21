@@ -5,6 +5,188 @@ All notable changes to the Universal Portfolio & Web Tools Platform will be docu
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2024-01-15
+
+### 🚀 Major Release - Public Project Transformation
+
+This release transforms the project into a professional, production-ready platform suitable for public use.
+
+### Added
+- **Environment Configuration System**
+  - `.env` file support for configuration management
+  - Environment-aware settings with secure defaults
+  - Comprehensive `.env.example` with all available options
+
+- **Professional Code Architecture**
+  - PSR-4 compliant namespace structure (`PortfolioTools\`)
+  - Organized codebase with `src/` directory
+  - Separation of concerns with dedicated classes:
+    - `Core\Config` - Configuration management
+    - `Security\Security` - Security utilities and validation
+    - `Utils\FileHandler` - File handling operations
+    - `QR\QRGenerator` - QR code generation service
+
+- **Security Enhancements**
+  - CSRF token protection
+  - Input sanitization and validation
+  - Rate limiting system
+  - Secure file upload handling
+  - Session security improvements
+
+- **Testing Infrastructure**
+  - PHPUnit test suite with example tests
+  - Code coverage reporting
+  - GitHub Actions CI/CD pipeline
+  - PHP compatibility testing (7.4, 8.0, 8.1, 8.2)
+
+- **Development Tools**
+  - PHP-CS-Fixer for code style consistency
+  - PHPStan for static analysis
+  - Psalm for additional code analysis
+  - Docker support with docker-compose
+
+- **Documentation**
+  - Comprehensive README with badges and quick start
+  - Detailed installation guide (`INSTALLATION.md`)
+  - API documentation (`API.md`)
+  - Enhanced deployment guide with multiple strategies
+  - Contributing guidelines
+
+- **Project Management**
+  - Professional `.gitignore` file
+  - Composer scripts for common tasks
+  - EditorConfig for consistent coding style
+  - Issue and PR templates (GitHub)
+
+### Changed
+- **Configuration System**
+  - Migrated from hardcoded values to environment-based configuration
+  - Improved path resolution with fallbacks
+  - Better error handling and logging
+
+- **File Structure**
+  - Added `src/` directory for application code
+  - Reorganized includes and utilities
+  - Added proper namespace autoloading
+
+- **Dependencies**
+  - Updated to require PHP 7.4+ (8.1+ recommended)
+  - Added development dependencies for testing and code quality
+  - Improved Composer configuration with scripts
+
+### Fixed
+- **Security Issues**
+  - Fixed potential XSS vulnerabilities
+  - Improved file upload validation
+  - Enhanced session security
+
+- **Code Quality**
+  - Fixed PHP compatibility issues
+  - Improved error handling
+  - Better input validation
+
+### Security
+- **File Upload Security**
+  - Comprehensive file type validation
+  - Secure filename generation
+  - Directory traversal protection
+
+- **Session Security**
+  - Secure session configuration
+  - CSRF protection for forms
+  - Rate limiting for API endpoints
+
+## [1.5.0] - 2024-01-01
+
+### Added
+- QR code generation for URLs and files
+- File upload and sharing system
+- URL shortener functionality
+- Admin dashboard for managing content
+
+### Changed
+- Improved responsive design
+- Enhanced user interface
+- Better mobile compatibility
+
+### Fixed
+- Various bug fixes and improvements
+- Performance optimizations
+
+## [1.0.0] - 2023-12-01
+
+### Added
+- Initial portfolio website
+- Basic project showcase
+- Contact form functionality
+- Social media integration
+
+## Migration Guide
+
+### Upgrading from 1.x to 2.0
+
+1. **Backup your current installation**
+   ```bash
+   cp -r /path/to/current-site /path/to/backup
+   ```
+
+2. **Install new dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Create environment configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your settings
+   ```
+
+4. **Update file permissions**
+   ```bash
+   chmod -R 755 private/data logs cache
+   ```
+
+5. **Test the upgrade**
+   - Verify all functionality works
+   - Check file uploads and QR generation
+   - Test security features
+
+### Breaking Changes in 2.0
+
+- **Configuration**: Must use `.env` file instead of hardcoded values in `config.php`
+- **Namespaces**: All classes now use `PortfolioTools\` namespace
+- **File Structure**: Some files moved to `src/` directory
+- **Dependencies**: Requires PHP 7.4+ (previously 7.2+)
+
+## Contributors
+
+Special thanks to all contributors who helped make this project better:
+
+- [@ShayNeeo](https://github.com/ShayNeeo) - Original creator and maintainer
+- Contributors welcome! See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Support
+
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/ShayNeeo/Portfolio-template/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/ShayNeeo/Portfolio-template/discussions)
+- 📖 **Documentation**: [Project Wiki](https://github.com/ShayNeeo/Portfolio-template/wiki)
+- 💬 **Community**: [Discord Server](https://discord.gg/UbtHVJza)
+
+---
+
+**Note**: This changelog follows the [Keep a Changelog](https://keepachangelog.com/) format. Each version includes categorized changes:
+- **Added** for new features
+- **Changed** for changes in existing functionality
+- **Deprecated** for soon-to-be removed features
+- **Removed** for now removed features
+- **Fixed** for any bug fixes
+- **Security** for vulnerability fixes
+
+All notable changes to the Universal Portfolio & Web Tools Platform will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [Unreleased]
 
 ### Planned
