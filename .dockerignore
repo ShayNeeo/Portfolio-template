@@ -1,0 +1,62 @@
+# Development files
+.env
+.env.local
+.env.development
+.env.staging
+.env.example
+
+# Version control
+.git
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies (will be installed during build)
+vendor/
+node_modules/
+
+# Testing and coverage
+tests/
+coverage/
+.phpunit.cache/
+.phpunit.result.cache
+clover.xml
+
+# Development tools
+.php-cs-fixer.cache
+.php-cs-fixer.php
+phpstan.neon
+phpunit.xml
+
+# Documentation
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+*.md
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/
+
+# Logs and cache (will be created at runtime)
+logs/
+cache/
+tmp/
+
+# User uploads (will be mounted or created at runtime)
+private/data/qr-uploads/*
+private/data/qr-generated/*
+
+# Backup files
+*.bak
+*.backup

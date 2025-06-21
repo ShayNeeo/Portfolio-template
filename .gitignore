@@ -46,10 +46,12 @@ private/data/qr-generated/*
 # Cache files
 cache/
 *.cache
+.phpunit.cache/
 
 # PHP specific
 composer.lock
 .phpunit.result.cache
+.php-cs-fixer.cache
 
 # Coverage reports
 coverage/
@@ -62,3 +64,7 @@ clover.xml
 # Configuration overrides
 config/local.php
 config/production.php
+
+# Build artifacts
+build/
+dist/

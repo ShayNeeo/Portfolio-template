@@ -31,18 +31,16 @@
         "chat": "https://discord.gg/UbtHVJza",
         "docs": "https://github.com/ShayNeeo/Portfolio-template/wiki",
         "email": "shayneeo@pt.io.vn"
-    },
-    "require": {
-        "php": "^7.4|^8.0",
+    },    "require": {
+        "php": "^8.1",
         "ext-gd": "*",
         "ext-json": "*",
         "chillerlan/php-qrcode": "^4.3",
         "chillerlan/php-settings-container": "^2.1"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5",
+    },    "require-dev": {
+        "phpunit/phpunit": "^10.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "phpstan/phpstan": "^1.0"
+        "phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "psr-4": {
@@ -56,17 +54,22 @@
     },    "scripts": {
         "test": "phpunit --testdox",
         "test-coverage": "phpunit --coverage-html coverage --coverage-clover clover.xml --testdox",
-        "cs-fix": "php-cs-fixer fix || true",
-        "cs-check": "php-cs-fixer fix --dry-run --diff || true",
-        "phpstan": "phpstan analyse --no-progress || true",
-        "audit": "composer audit --no-dev || true",
+        "cs-fix": "php-cs-fixer fix",
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "phpstan": "phpstan analyse --no-progress",
+        "audit": "composer audit --no-dev",
         "setup": [
-            "mkdir -p private/data/qr-generated private/data/qr-uploads logs cache || true",
-            "chmod -R 777 private/data/qr-generated private/data/qr-uploads logs cache || true"
+            "mkdir -p private/data/qr-generated private/data/qr-uploads logs cache",
+            "chmod -R 755 private/data/qr-generated private/data/qr-uploads logs cache"
         ],
         "setup-dev": [
             "@setup",
-            "cp .env.example .env || true"
+            "cp .env.example .env"
+        ],
+        "setup-prod": [
+            "@setup",
+            "composer install --no-dev --optimize-autoloader",
+            "composer dump-autoload --optimize --classmap-authoritative"
         ],
         "post-install-cmd": [
             "echo 'Installation complete! Run your web server pointing to the public/ directory.'"

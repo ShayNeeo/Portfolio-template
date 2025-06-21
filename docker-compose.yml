@@ -14,37 +14,46 @@ services:
       - ./private/data:/var/www/html/private/data
       - ./logs:/var/www/html/logs
       - ./.env:/var/www/html/.env
-    depends_on:
-      - db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     networks:
       - portfolio-network
 
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: portfolio
-      MYSQL_USER: portfolio_user
-      MYSQL_PASSWORD: portfolio_pass
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - portfolio-network
+  # Optional: Add database service for future features
+  # Uncomment if you need database functionality
+  # db:
+  #   image: mysql:8.0
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+  #     MYSQL_DATABASE: ${DB_NAME:-portfolio}
+  #     MYSQL_USER: ${DB_USERNAME:-portfolio_user}
+  #     MYSQL_PASSWORD: ${DB_PASSWORD:-portfolio_pass}
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   restart: unless-stopped
+  #   networks:
+  #     - portfolio-network
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    ports:
-      - "8081:80"
-    environment:
-      PMA_HOST: db
-      PMA_USER: portfolio_user
-      PMA_PASSWORD: portfolio_pass
-    depends_on:
-      - db
-    networks:
-      - portfolio-network
+  # Optional: Add phpMyAdmin for database management
+  # phpmyadmin:
+  #   image: phpmyadmin:latest
+  #   ports:
+  #     - "8081:80"
+  #   environment:
+  #     PMA_HOST: db
+  #     PMA_USER: ${DB_USERNAME:-portfolio_user}
+  #     PMA_PASSWORD: ${DB_PASSWORD:-portfolio_pass}
+  #   depends_on:
+  #     - db
+  #   restart: unless-stopped
+  #   networks:
+  #     - portfolio-network
 
 volumes:
   mysql_data:

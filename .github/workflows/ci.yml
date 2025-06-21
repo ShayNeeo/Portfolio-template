@@ -12,31 +12,32 @@ jobs:
     
     strategy:
       matrix:
-        php-versions: ['7.4', '8.0', '8.1', '8.2']
+        php-versions: ['8.1', '8.2', '8.3']
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-versions }}
-        extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, json
+        extensions: mbstring, xml, ctype, iconv, intl, pdo, dom, filter, gd, json
         coverage: xdebug
+        tools: composer:v2
     
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        key: ${{ runner.os }}-php-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-php-
+          ${{ runner.os }}-php-${{ matrix.php-versions }}-
+      - name: Validate Composer
+      run: composer validate --strict
     
     - name: Install dependencies
-      run: |
-        composer install --prefer-dist --no-progress --no-interaction
-        composer dump-autoload
+      run: composer install --prefer-dist --no-progress --no-interaction --optimize-autoloader
     
     - name: Create required directories
       run: |
@@ -50,55 +51,57 @@ jobs:
     
     - name: Create test environment file
       run: |
-        cp .env.example .env || echo "DEBUG_MODE=true" > .env
+        cp .env.example .env
     
     - name: Run code style check
-      run: composer cs-check || echo "Code style check failed, continuing..."
+      run: composer cs-check
     
     - name: Run static analysis
-      run: composer phpstan || echo "Static analysis failed, continuing..."
+      run: composer phpstan
     
     - name: Run tests
-      run: composer test
+      run: composer test-coverage
     
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         file: ./clover.xml
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: false
-
+        token: ${{ secrets.CODECOV_TOKEN }}
   security:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.1'
-        extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, json
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, intl, pdo, dom, filter, gd, json
+        tools: composer:v2
     
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      run: composer install --prefer-dist --no-progress --no-dev --optimize-autoloader
     
     - name: Run security audit
-      run: composer audit
+      run: composer audit --no-dev
 
   build-docker:
     runs-on: ubuntu-latest
     needs: [test, security]
+    if: github.ref == 'refs/heads/main'
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
     
-    - name: Build Docker image
-      uses: docker/build-push-action@v4
+    - name: Build and test Docker image
+      uses: docker/build-push-action@v5
       with:
         context: .
         platforms: linux/amd64,linux/arm64
@@ -106,3 +109,17 @@ jobs:
         tags: portfolio-web-tools:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [test, security, build-docker]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: production
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to production
+      run: |
+        echo "🚀 Production deployment would happen here"
+        echo "Configure your deployment strategy in this step"

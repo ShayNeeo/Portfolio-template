@@ -1,7 +1,7 @@
 # 🌐 Universal Portfolio & Web Tools Platform
 
 [![CI/CD Pipeline](https://github.com/ShayNeeo/Portfolio-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ShayNeeo/Portfolio-template/actions/workflows/ci.yml)
-[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://php.net)
+[![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-blue.svg)](https://php.net)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ShayNeeo/Portfolio-template/graphs/commit-activity)
 
@@ -33,7 +33,7 @@ php -S localhost:8000 -t public/
 
 ## 📋 Requirements
 
-- **PHP 7.4+** (8.1+ recommended)
+- **PHP 8.1+** (Latest stable recommended)
 - **Composer** for dependency management
 - **GD Extension** for image processing
 - **Web Server** (Apache/Nginx) or PHP built-in server
@@ -209,7 +209,7 @@ docker compose up -d  # Complete LAMP stack with all tools ready
    ```
 
 ### 📋 Prerequisites
-- **PHP 7.4+** (PHP 8.0+ recommended)
+- **PHP 8.1+** (Latest stable recommended)
 - **Web server** (Apache/Nginx) or Docker
 - **Composer** (auto-installed if missing)
 - **5 minutes** of your time
