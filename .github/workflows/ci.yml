@@ -29,8 +29,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}        restore-keys: |
           ${{ runner.os }}-php-
     
     - name: Install dependencies
@@ -46,7 +45,8 @@ jobs:
     
     - name: Run code style check
       run: composer cs-check
-      - name: Run static analysis
+    
+    - name: Run static analysis
       run: composer phpstan
     
     - name: Run tests
