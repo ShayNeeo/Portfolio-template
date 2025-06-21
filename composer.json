@@ -1,0 +1,95 @@
+{
+    "name": "universal/portfolio-web-tools",
+    "description": "A complete, ready-to-deploy web platform combining portfolio showcase with powerful web utilities - QR code generation, URL shortening, and more.",
+    "keywords": [
+        "portfolio",
+        "qr-code",
+        "url-shortener",
+        "web-tools",
+        "php",
+        "small-business",
+        "freelancer",
+        "marketing",
+        "productivity"
+    ],    "homepage": "https://github.com/ShayNeeo/Portfolio-template",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ShayNeeo",
+            "email": "shayneeo@pt.io.vn"
+        },
+        {
+            "name": "Portfolio Web Tools Contributors",
+            "homepage": "https://github.com/ShayNeeo/Portfolio-template/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ShayNeeo/Portfolio-template/issues",
+        "wiki": "https://github.com/ShayNeeo/Portfolio-template/wiki",
+        "source": "https://github.com/ShayNeeo/Portfolio-template",
+        "chat": "https://discord.gg/UbtHVJza",
+        "docs": "https://github.com/ShayNeeo/Portfolio-template/wiki",
+        "email": "shayneeo@pt.io.vn"
+    },
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "chillerlan/php-qrcode": "^4.3",
+        "chillerlan/php-settings-container": "^2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "vimeo/psalm": "^4.0",
+        "phpstan/phpstan": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PortfolioTools\\": "src/"
+        },
+        "files": [
+            "private/includes/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PortfolioTools\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage",
+        "cs-fix": "php-cs-fixer fix",
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "psalm": "psalm",
+        "phpstan": "phpstan analyse",
+        "setup": [
+            "@composer install",
+            "chmod -R 777 private/data/qr-generated",
+            "chmod -R 777 private/data/qr-uploads"
+        ],
+        "post-install-cmd": [
+            "echo 'Installation complete! Run your web server pointing to the public/ directory.'"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "*": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "suggest": {
+        "ext-imagick": "For advanced image processing capabilities",
+        "ext-curl": "For external API integrations",
+        "ext-mbstring": "For better string handling with international characters"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.5.x-dev"
+        }
+    }
+}
