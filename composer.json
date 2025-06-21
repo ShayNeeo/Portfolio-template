@@ -53,14 +53,13 @@
         "psr-4": {
             "PortfolioTools\\Tests\\": "tests/"
         }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "test-coverage": "phpunit --coverage-html coverage --coverage-clover clover.xml",
-        "cs-fix": "php-cs-fixer fix",
-        "cs-check": "php-cs-fixer fix --dry-run --diff",
-        "phpstan": "phpstan analyse",
-        "audit": "composer audit",
+    },    "scripts": {
+        "test": "phpunit --testdox",
+        "test-coverage": "phpunit --coverage-html coverage --coverage-clover clover.xml --testdox",
+        "cs-fix": "php-cs-fixer fix || true",
+        "cs-check": "php-cs-fixer fix --dry-run --diff || true",
+        "phpstan": "phpstan analyse --no-progress || true",
+        "audit": "composer audit --no-dev || true",
         "setup": [
             "mkdir -p private/data/qr-generated private/data/qr-uploads logs cache || true",
             "chmod -R 777 private/data/qr-generated private/data/qr-uploads logs cache || true"

@@ -11,7 +11,15 @@ class ConfigTest extends TestCase
 
     protected function setUp(): void
     {
+        // Ensure config can be instantiated
         $this->config = Config::getInstance();
+    }
+
+    public function testSingletonPattern()
+    {
+        $config1 = Config::getInstance();
+        $config2 = Config::getInstance();
+        $this->assertSame($config1, $config2);
     }
 
     public function testGetDefaultValue()
@@ -35,7 +43,15 @@ class ConfigTest extends TestCase
     {
         $allConfig = $this->config->all();
         $this->assertIsArray($allConfig);
+        // Basic structure should exist
         $this->assertArrayHasKey('site', $allConfig);
         $this->assertArrayHasKey('paths', $allConfig);
+    }
+
+    public function testConfigHasBasicStructure()
+    {
+        $this->assertIsString($this->config->get('site.name', ''));
+        $this->assertIsString($this->config->get('site.url', ''));
+        $this->assertIsString($this->config->get('paths.root', ''));
     }
 }

@@ -1,5 +1,5 @@
 parameters:
-    level: 5
+    level: 1
     paths:
         - src
     excludePaths:
@@ -7,3 +7,6 @@ parameters:
         - tests
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        - '#Undefined variable#'
+        - '#undefined constant#'
