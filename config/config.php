@@ -155,6 +155,9 @@ foreach ($required_dirs as $dir) {
         mkdir($dir, 0755, true);
     }
 }
+
+// Default social media icons
+$default_social_icons = [
     'instagram.jpg',
     'github.jpg',
     'x.jpg',
