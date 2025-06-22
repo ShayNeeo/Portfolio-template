@@ -32,9 +32,6 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interactio
 # Copy application code
 COPY --chown=www-data:www-data . /var/www/html
 
-# Run composer scripts
-RUN composer run-script post-install-cmd --no-interaction
-
 # Create required directories
 RUN mkdir -p private/data/qr-generated private/data/qr-uploads logs cache \
     && chown -R www-data:www-data private/data logs cache \
