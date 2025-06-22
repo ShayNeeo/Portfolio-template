@@ -20,14 +20,14 @@ include_template('header.php', [
 
 <div class="about-container">
     <section class="about-header">
-        <h1>About ShayNeeo</h1>
+        <h1>About This Project</h1>
         <div class="profile-section">
             <div class="profile-image">
-                <img src="<?php echo asset('images/blogger.jpg'); ?>" alt="ShayNeeo's Profile Picture">
+                <img src="<?php echo asset('images/blogger.jpg'); ?>" alt="Project Logo">
             </div>
             <div class="profile-intro">
-                <h2>Full Stack Developer & Problem Solver</h2>
-                <p>I'm a passionate developer who loves creating innovative web solutions and turning complex problems into elegant, user-friendly applications.</p>
+                <h2>Open-Source Web Tools Platform</h2>
+                <p>This project is a community-driven, open-source platform for building modern web portfolios and productivity tools. It is designed for developers, freelancers, agencies, and anyone who wants to showcase their work and leverage powerful web utilities.</p>
             </div>
         </div>
     </section>
@@ -35,32 +35,32 @@ include_template('header.php', [
     <section class="about-content">
         <div class="content-grid">
             <div class="about-text">
-                <h2>My Story</h2>
-                <p>Hello! I'm ShayNeeo, a dedicated full-stack developer with a passion for creating exceptional digital experiences. My journey in web development started with curiosity and has evolved into a career focused on building robust, scalable, and beautiful web applications.</p>
+                <h2>Project Story</h2>
+                <p>This platform was created to empower the public with a free, extensible, and production-ready web toolkit. It is maintained by contributors from around the world and welcomes new ideas and improvements from the community.</p>
                 
-                <p>I believe in the power of clean code, thoughtful design, and user-centered development. Whether I'm working on a complex backend system or crafting an intuitive user interface, I always strive for excellence and attention to detail.</p>
+                <p>We believe in the power of open-source collaboration, clean code, and user-centered design. Whether you're using this as a personal portfolio, a business toolkit, or an educational resource, you're part of a growing community.</p>
                 
-                <h2>What I Do</h2>
-                <p>I specialize in full-stack web development, with expertise in both frontend and backend technologies. I enjoy working on projects that challenge me to learn new technologies and solve complex problems.</p>
+                <h2>What This Project Offers</h2>
+                <p>It provides a full-stack web solution, including portfolio templates, QR code generation, URL shortening, file management, and more. The architecture is modular and easy to extend for your own needs.</p>
                 
                 <div class="specialties">
                     <div class="specialty">
-                        <h3>🎨 Frontend Development</h3>
-                        <p>Creating responsive, interactive user interfaces with modern web technologies</p>
+                        <h3>🎨 Frontend</h3>
+                        <p>Responsive, accessible, and modern UI/UX</p>
                     </div>
                     <div class="specialty">
-                        <h3>⚙️ Backend Development</h3>
-                        <p>Building robust server-side applications and RESTful APIs</p>
+                        <h3>⚙️ Backend</h3>
+                        <p>Secure, scalable, and API-ready PHP backend</p>
                     </div>
                     <div class="specialty">
-                        <h3>🚀 System Architecture</h3>
-                        <p>Designing scalable applications with optimal performance</p>
+                        <h3>🚀 Community</h3>
+                        <p>Open to contributions, feedback, and new features</p>
                     </div>
                 </div>
             </div>
             
             <div class="skills-sidebar">
-                <h2>Technical Skills</h2>
+                <h2>Core Technologies</h2>
                 <div class="skill-group">
                     <h3>Languages</h3>
                     <div class="skill-list">
@@ -75,9 +75,9 @@ include_template('header.php', [
                 <div class="skill-group">
                     <h3>Frameworks & Libraries</h3>
                     <div class="skill-list">
-                        <span class="skill-item">jQuery</span>
-                        <span class="skill-item">Bootstrap</span>
                         <span class="skill-item">Composer</span>
+                        <span class="skill-item">chillerlan/php-qrcode</span>
+                        <span class="skill-item">Bootstrap</span>
                     </div>
                 </div>
                 
@@ -91,18 +91,15 @@ include_template('header.php', [
                         <span class="skill-item">MySQL</span>
                     </div>
                 </div>
-                  <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="contact-info">
+                    <h3>Get Involved</h3>
+                    <p>This is a public, open-source project. Join us on GitHub or Discord to contribute, ask questions, or share your ideas!</p>
                     <div class="contact-links">
-                        <a href="mailto:admin@pt.io.vn" class="contact-link email-link" target="_blank" rel="noopener noreferrer">
-                            📧 Email Me
+                        <a href="https://github.com/ShayNeeo/Portfolio-template" class="contact-link github-link" target="_blank" rel="noopener noreferrer">
+                            🌐 GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/shayneeo/" class="contact-link linkedin-link" target="_blank" rel="noopener noreferrer">
-                            💼 LinkedIn
-                        </a>
-                        <a href="https://github.com/ShayNeeo" class="contact-link github-link" target="_blank" rel="noopener noreferrer">
-                            🐙 GitHub
+                        <a href="https://discord.gg/UbtHVJza" class="contact-link discord-link" target="_blank" rel="noopener noreferrer">
+                            💬 Discord
                         </a>
                     </div>
                 </div>

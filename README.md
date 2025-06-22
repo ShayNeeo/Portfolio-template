@@ -743,4 +743,4 @@ If you encounter issues not covered here:
 
 **Built with ❤️ by the open source community • Licensed under MIT • Made for everyone, everywhere**
 
-**🌟 [Give us a star](https://github.com/ShayNeeo/Portfolio-template) • 🐛 [Report issues](https://github.com/ShayNeeo/Portfolio-template/issues) • 💬 [Join Discord](https://discord.gg/UbtHVJza) • 📧 [Contact](mailto:shayneeo@pt.io.vn)**
+**🌟 [Give us a star](https://github.com/ShayNeeo/Portfolio-template) • 🐛 [Report issues](https://github.com/ShayNeeo/Portfolio-template/issues) • 💬 [Join Discord](https://discord.gg/UbtHVJza)**

@@ -16,12 +16,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "ShayNeeo",
-            "email": "shayneeo@pt.io.vn"
-        },
-        {
-            "name": "Portfolio Web Tools Contributors",
-            "homepage": "https://github.com/ShayNeeo/Portfolio-template/contributors"
+            "name": "Universal Portfolio & Web Tools Platform Contributors",
+            "homepage": "https://github.com/ShayNeeo/Portfolio-template/graphs/contributors"
         }
     ],
     "support": {

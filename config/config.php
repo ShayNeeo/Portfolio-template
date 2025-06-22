@@ -44,7 +44,6 @@ function env($key, $default = null) {
 // Define base paths with environment awareness
 $possible_root_dirs = [
     dirname(__DIR__),
-    '/home/shayneeo_isadev/htdocs/sgn.is-a.dev',
     realpath(dirname(__DIR__))
 ];
 
@@ -81,6 +80,7 @@ define('ERROR_REPORTING_LEVEL', env('ERROR_REPORTING', E_ALL));
 define('SITE_NAME', env('SITE_NAME', 'Universal Portfolio & Web Tools'));
 define('SITE_URL', env('SITE_URL', 'http://localhost'));
 define('SITE_DESCRIPTION', env('SITE_DESCRIPTION', 'A complete web platform combining portfolio showcase with powerful web utilities'));
+define('SITE_KEYWORDS', env('SITE_KEYWORDS', 'portfolio, web tools, qr code, url shortener, php, open source'));
 define('CONTACT_EMAIL', env('CONTACT_EMAIL', 'contact@localhost'));
 define('CONTACT_NAME', env('CONTACT_NAME', 'Portfolio Owner'));
 

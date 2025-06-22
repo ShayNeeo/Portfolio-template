@@ -8,14 +8,14 @@
 <html lang="en">
 <head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ShayNeeo - Full Stack Developer & Creative Problem Solver. Passionate about creating beautiful, functional web experiences.">
-    <meta name="keywords" content="ShayNeeo, Full Stack Developer, Web Developer, PHP, JavaScript, Portfolio">
-    <meta name="author" content="ShayNeeo">
+    <meta name="description" content="<?php echo SITE_DESCRIPTION; ?>">
+    <meta name="keywords" content="<?php echo SITE_KEYWORDS; ?>">
+    <meta name="author" content="<?php echo SITE_NAME; ?>">
     <meta name="theme-color" content="#667eea">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="<?php echo isset($title) ? $title . ' - ' . SITE_NAME : SITE_NAME; ?>">
-    <meta property="og:description" content="Full Stack Developer & Creative Problem Solver">
+    <meta property="og:description" content="<?php echo SITE_DESCRIPTION; ?>">
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?php echo asset('images/logo.jpg'); ?>">
     
